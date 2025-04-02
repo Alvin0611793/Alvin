@@ -1,0 +1,56 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <link rel="stylesheet" href="./LD1_FINALS_files/okey.css">
+        </head><body>
+
+            <style>
+                body {font-family: Arial, sans-serif; text-align: center;}
+                .container {margin-top: 50px;}
+                .disabled {background-color: gray; cursor: not-allowed;}
+            </style>
+
+
+   <div class="okay">
+    <h2>Log in</h2>
+    <input type=" text" id="username" placeholder="username"><br> <br>
+    <input type=" text" id="password" placeholder="password"><br> <br>
+    <button id="login" onclick="login()">Submit</button>
+    <p class="error" id="errorMessage"></p>
+   </div>
+
+
+           
+<script>
+    let cooldownActive = false;
+
+    function login() {
+        if (cooldownActive) return;
+
+        let username = document.getElementById("username").value;
+        let password= document.getElementById("password").value;
+        let errorMessage = document.getElementById("errorMessage");
+        let login = document.getElementById("login");
+
+        let validUsername = "alvin";
+        let validPassword = "alvin0611";
+
+        if ( username === validUsername && password === validPassword) {
+            alert("Log in successfully");
+           window.location.assign("index.html")
+        } else {
+            errorMessage.textContent = " Invalid username or password. Please wait 10 seconds.";
+            login.disabled = true;
+            cooldownActive = true;
+
+            setTimeout(() => {
+                errorMessage.textContent = "";
+                login.disabled = false;
+                cooldownActive = false;
+            },10000);
+
+        }
+
+    }
+</script>
+        
+    </body></html>
