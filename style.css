@@ -61,6 +61,29 @@ nav ul li a:hover {
     padding: 40px 20px;
     text-align: center;
     background-color: #d4c977;
+
+   
+.menu-item a {
+    text-decoration: none;
+    color: #333; 
+}
+
+
+.menu-item a h3 {
+    color: #2c3e50;
+}
+
+
+.menu-item a p {
+    color: #e74c3c; 
+}
+
+
+.menu-item a:hover {
+    color: #f39c12; 
+}
+
+    
 }
 
 .menu h2 {
